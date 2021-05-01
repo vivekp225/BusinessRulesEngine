@@ -1,13 +1,17 @@
 ﻿using BusinessRulesEngine.Interfaces.DomainEntities;
-using System;
 
 namespace BusinessRulesEngine.DomainEntities
 {
-    class PhysicalProduct : Product, IPhysicalProduct
+    abstract class PhysicalProduct : Product, IPhysicalProduct
     {
         public void GeneratePackingSlip()
         {
-            throw new NotImplementedException();
+            ProcessingOperations.Add("Packing slip for shipping generated.");
+        }
+
+        public void GenerateComissionPayment()
+        {
+            ProcessingOperations.Add("Comssion payment to the agent generated.");
         }
     }
 }
