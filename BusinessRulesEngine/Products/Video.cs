@@ -3,7 +3,7 @@ using BusinessRulesEngine.Interfaces.Products;
 
 namespace BusinessRulesEngine.Products
 {
-    class Video : PhysicalProduct, IVideo
+    public class Video : PhysicalProduct, IVideo
     {
         public Video(string videoName)
         {
@@ -16,7 +16,7 @@ namespace BusinessRulesEngine.Products
 
         public void AddFreeVideo()
         {
-            if (ItemName.Trim().ToLower().Equals("learning to ski"))
+            if (ItemName.ToLower().Equals("learning to ski"))
             {
                 ProcessingOperations.Add("Added a free 'Free Aid' video to the packing slip.");
             }

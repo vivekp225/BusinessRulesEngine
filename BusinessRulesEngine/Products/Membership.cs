@@ -3,12 +3,12 @@ using BusinessRulesEngine.Interfaces.Products;
 
 namespace BusinessRulesEngine.Products
 {
-    class Membership : VirtualProduct, IMembership
+    public class Membership : VirtualProduct, IMembership
     {
         public Membership(string membershipType, string membershipTransaction)
         {
             ItemName = membershipType;
-            bool isUpgrade = membershipTransaction.Trim().ToLower().Equals("upgrade");
+            bool isUpgrade = membershipTransaction.ToLower().Equals("upgrade");
 
             ActivateOrUpgradeMembership(isUpgrade);
             SendEmail(isUpgrade);
@@ -24,8 +24,8 @@ namespace BusinessRulesEngine.Products
         public void SendEmail(bool isUpgrade)
         {
             ProcessingOperations.Add(isUpgrade ?
-                $"Email to owner informing about membership upgrade sent." :
-                $"Email to owner informing about membership activation sent.");
+                $"Email to owner informing about upgrade to {ItemName} membership sent." :
+                $"Email to owner informing about {ItemName} membership activation sent.");
         }
     }
 }

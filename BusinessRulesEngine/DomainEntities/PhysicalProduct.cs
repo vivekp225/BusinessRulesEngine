@@ -2,7 +2,7 @@
 
 namespace BusinessRulesEngine.DomainEntities
 {
-    abstract class PhysicalProduct : Product, IPhysicalProduct
+    public abstract class PhysicalProduct : Product, IPhysicalProduct
     {
         public void GeneratePackingSlip()
         {

@@ -2,7 +2,7 @@
 
 namespace BusinessRulesEngine.Products
 {
-    class OtherVirtual : VirtualProduct
+    public class OtherVirtual : VirtualProduct
     {
         public OtherVirtual(string productName)
         {

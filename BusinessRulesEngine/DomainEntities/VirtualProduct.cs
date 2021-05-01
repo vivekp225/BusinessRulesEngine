@@ -2,7 +2,7 @@
 
 namespace BusinessRulesEngine.DomainEntities
 {
-    abstract class VirtualProduct : Product, IVirtualProduct
+    public abstract class VirtualProduct : Product, IVirtualProduct
     {
         // nothing
     }
